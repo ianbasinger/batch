@@ -15,8 +15,4 @@ echo 10: Paper Problem state. The printer has encountered a paper-related issue.
 echo 11: Offline (Pending Deletion) state. The printer is marked for deletion but still processing pending jobs.
 echo.
 
-:This will echo all printer status to the shell, we use this to understand the meaning of some output below
-
 wmic printer get Name,DriverName,PortName,Status,StatusInfo,PrinterState,PrinterStatus,ExtendedPrinterStatus,TimeOfLastReset,StartTime,LastErrorCode,ErrorInformation,ErrorDescription,ErrorCleared,InstallDate,Default /format:list
-
-:This grabs useful printer info for all installed printers on a local computer, formatted in a list format
