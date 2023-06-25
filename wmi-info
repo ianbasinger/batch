@@ -15,4 +15,51 @@ echo 10: Paper Problem state. The printer has encountered a paper-related issue.
 echo 11: Offline (Pending Deletion) state. The printer is marked for deletion but still processing pending jobs.
 echo.
 
+echo Printer Information:
 wmic printer get Name,DriverName,PortName,Status,StatusInfo,PrinterState,PrinterStatus,ExtendedPrinterStatus,TimeOfLastReset,StartTime,LastErrorCode,ErrorInformation,ErrorDescription,ErrorCleared,InstallDate,Default /format:list
+
+echo.
+echo Process Information:
+wmic process get Caption,ProcessId,CommandLine
+
+echo.
+echo Operating System Information:
+wmic os get Caption,Version,BuildNumber,RegisteredUser
+
+echo.
+echo Disk Drive Information:
+wmic diskdrive get Caption,Size,InterfaceType,MediaType
+
+echo.
+echo Network Interface Information:
+wmic nic get Name,MACAddress,Speed
+
+echo.
+echo BIOS Information:
+wmic bios get Manufacturer,Version,SMBIOSBIOSVersion
+
+echo.
+echo Memory Information:
+wmic memorychip get BankLabel,Capacity,Manufacturer
+
+echo.
+echo User Account Information:
+wmic useraccount get Name,FullName,Status
+
+echo.
+echo Service Information:
+wmic service get Caption,Name,StartMode,State,ProcessId
+
+echo.
+echo Disk Partition Information:
+wmic partition get Caption,Size,Type,Bootable
+
+echo.
+echo Network Adapter Information:
+wmic nicconfig get Caption,Description,IPAddress,MACAddress
+
+echo.
+echo Video Controller Information:
+wmic path Win32_VideoController get Caption,AdapterRAM,VideoModeDescription
+
+pause
