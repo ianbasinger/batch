@@ -1,0 +1,22 @@
+@echo off
+
+echo.
+echo Printer Status Meanings:
+echo 1: Other or Unknown state.
+echo 2: Idle state. The printer is ready and waiting for a print job.
+echo 3: Printing state. The printer is currently processing a print job.
+echo 4: Warmup state. The printer is warming up or initializing.
+echo 5: Stopped state. The printer has encountered an error or is in a stopped state.
+echo 6: Offline state. The printer is currently offline or not connected.
+echo 7: Paper Jam state. The printer has a paper jam that needs to be cleared.
+echo 8: Paper Out state. The printer is out of paper and requires paper to be loaded.
+echo 9: Manual Feed state. The printer is waiting for manual paper feed.
+echo 10: Paper Problem state. The printer has encountered a paper-related issue.
+echo 11: Offline (Pending Deletion) state. The printer is marked for deletion but still processing pending jobs.
+echo.
+
+# This will echo all printer status to the shell, we use this to understand the meaning of some output below
+
+wmic printer get Name,DriverName,PortName,Status,StatusInfo,PrinterState,PrinterStatus,ExtendedPrinterStatus,TimeOfLastReset,StartTime,LastErrorCode,ErrorInformation,ErrorDescription,ErrorCleared,InstallDate,Default /format:list
+
+# This grabs useful printer info for all installed printers on a local computer, formatted in a list format
